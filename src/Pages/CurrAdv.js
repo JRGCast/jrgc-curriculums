@@ -1,12 +1,12 @@
 import React from 'react';
 import { Emoji, SocialIcons, Title } from '../Components';
-
+import '../Style/CurrAdv.css';
 
 const CurrAdv = () => {
   const qualifications = ['Especialização na área criminal', 'Atuação majoritária nas áreas criminal, consumidor e família', 'Experiência em todas as demais áreas', 'Experiência em escritórios (1 ano como advogado associado)', 'Transporte próprio'];
-  const academicFormation = ['Bacharel em direito desde 2015 pelo IESB (Instituto de Educação Superior de Brasília)', 'Pós-graduação em Direito Penal e Direito Processual Penal pela Verbo Jurídico'];
-  const idioms = ['Inglês'];
-  const mapping = (array) => array.map(qual => <li style={{ listStyleType: 'disclosure-closed', textAlign: 'left' }}>{qual};</li>)
+  const academicFormation = ['2015 - Bacharelado em direito Instituto de Educação Superior de Brasília', '2018 - Pós-graduação em Direito Penal e Direito Processual Penal pela Verbo Jurídico', '2018 - Pós-graduação em Direito Processual Civil pela Verbo Jurídico'];
+  const idioms = ['Português - nativo', 'Inglês - avançado', 'Alemão - iniciante'];
+  const mapping = (array) => array.map(qual => <li style={{ paddingRight: '0', textAlign: 'left' }}>{qual};</li>)
   return (
     <main>
       <h1>EM CONSTRUÇÃO</h1>
@@ -32,18 +32,24 @@ const CurrAdv = () => {
         <section
           style={{
             display: 'flex',
-            justifyContent: 'space-between'
+            justifyContent: 'space-around'
           }}>
-          <aside style={{ border: '1px solid black', padding: '5px', width: 'fit-content' }}>
+          <aside style={{ border: '1px solid black', padding: '0 5px 0 0', width: 'fit-content' }}>
             <h4 > Síntese das qualificações profissionais:</h4>
             <ul style={{ display: 'flex', flexFlow: 'column nowrap' }}>
               {mapping(qualifications)}
             </ul>
           </aside>
-          <aside style={{ border: '1px solid black', padding: '5px', width: 'fit-content' }}>
+          <aside style={{ border: '1px solid black', padding: '0 5px 0 0', width: 'fit-content' }}>
             <h4>Formação Academica: </h4>
             <ul style={{ display: 'flex', flexFlow: 'column nowrap' }}>
               {mapping(academicFormation)}
+            </ul>
+          </aside>
+          <aside style={{ border: '1px solid black', padding: '0 5px 0 0', width: 'fit-content' }}>
+            <h4>Idiomas: </h4>
+            <ul style={{ display: 'flex', flexFlow: 'column nowrap' }}>
+              {mapping(idioms)}
             </ul>
           </aside>
         </section>
