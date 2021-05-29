@@ -3,5 +3,5 @@ ul {
 }
 
 ul li:before {
-  content: "\2714\0020"
+  content: "\1F5F8\0020"
 }
