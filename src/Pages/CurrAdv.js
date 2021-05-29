@@ -3,8 +3,12 @@ import { Emoji, SocialIcons, Title } from '../Components';
 
 
 const CurrAdv = () => {
+  const qualifications = ['Especialização na área criminal', 'Atuação majoritária nas áreas criminal, consumidor e família', 'Experiência em todas as demais áreas', 'Experiência em escritórios (1 ano como advogado associado)', 'Transporte próprio'];
+  const academicFormation = ['Bacharel em direito desde 2015 pelo IESB (Instituto de Educação Superior de Brasília)', 'Pós-graduação em Direito Penal e Direito Processual Penal pela Verbo Jurídico'];
+  const idioms = ['Inglês'];
+  const mapping = (array) => array.map(qual => <li style={{ listStyleType: 'disclosure-closed', textAlign: 'left' }}>{qual};</li>)
   return (
-    <main style={{ textAlign: 'center' }}>
+    <main>
       <h1>EM CONSTRUÇÃO</h1>
       <Title job="adv">
       </Title>
@@ -25,10 +29,26 @@ const CurrAdv = () => {
       </fieldset>
       <fieldset>
         <legend>Dados profissionais</legend>
-        <section>
+        <section
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between'
+          }}>
+          <aside style={{ border: '1px solid black', padding: '5px', width: 'fit-content' }}>
+            <h4 > Síntese das qualificações profissionais:</h4>
+            <ul style={{ display: 'flex', flexFlow: 'column nowrap' }}>
+              {mapping(qualifications)}
+            </ul>
+          </aside>
+          <aside style={{ border: '1px solid black', padding: '5px', width: 'fit-content' }}>
+            <h4>Formação Academica: </h4>
+            <ul style={{ display: 'flex', flexFlow: 'column nowrap' }}>
+              {mapping(academicFormation)}
+            </ul>
+          </aside>
         </section>
       </fieldset>
-    </main>
+    </main >
   );
 }
 
