@@ -1,6 +1,7 @@
 import React from 'react';
 import { Emoji, SocialIcons } from '../Components';
 import Title from '../Components/Title';
+import './CurrDev.css';
 
 
 const CurrDev = () => {
@@ -31,24 +32,27 @@ const CurrDev = () => {
             display: 'flex',
             justifyContent: 'space-around'
           } }>
-          <aside style={ { border: '1px solid black', padding: '0 5px 0 0', width: 'fit-content' } }>
+          <aside className='aside'>
             <h4 > Curso programação: </h4>
             <ul style={ { display: 'flex', flexFlow: 'column nowrap' } }>
             </ul>
           </aside>
-          <aside style={ { border: '1px solid black', padding: '0 5px 0 0', width: 'fit-content' } }>
+          <aside className='aside'>
             <h4>Tecnologias aprendidas: </h4>
             <table>
               <tr>
-              <tr>Fundamentos</tr>
-               <tr>Front-End</tr>
-               <tr>Back-End</tr>
+                <th>Fundamentos</th>
+                <th>Front-End</th>
+                <th>Back-End</th>
               </tr>
-            <tr>Ubuntu</tr>
-            <tr></tr>
+              <tr>
+                <td>
+                  Ubuntu
+                </td>
+              </tr>
             </table>
           </aside>
-          <aside style={ { border: '1px solid black', padding: '0 5px 0 0', width: 'fit-content' } }>
+          <aside style={ { border: '5px solid black', padding: '0 5px 0 0', width: 'fit-content' } }>
             <h4>Idiomas: </h4>
             <ul style={ { display: 'flex', flexFlow: 'column nowrap' } }>
             </ul>
