@@ -1,61 +1,66 @@
 import React from 'react';
-import { Emoji, SocialIcons } from '../Components';
+import { SocialIcons } from '../Components';
+import PersonalData from '../Components/PersonalData';
 import Title from '../Components/Title';
-import './CurrDev.css';
+import allImages from '../Images/imgSources';
+import '../Styles/CurrDev.css';
 
 
 const CurrDev = () => {
+  const logoStyles = {
+    objectFit: 'scale-down',
+    width: '5em'
+  };
+
+  const imgTdGenerate = (imgArr) => imgArr.map(({ src, alt }) => <img style={ logoStyles } src={ src } alt={ alt } />);
+  const fundImgs = imgTdGenerate(allImages.fundsImg);
+  const frontEndLogos = imgTdGenerate(allImages.frontEndImg);
+  const backEndLogos = imgTdGenerate(allImages.backEndImg);
+  const devUrls = [
+    'https://www.github.com/JRGCast',
+    'https://www.linkedin.com/in/joao-ralph-castaldi/',
+    'https://www.facebook.com/jcastaldiadv',
+    'https://www.instagram.com/jcastaldiadv/'];
   return (
-    <main style={ { textAlign: 'center' } }>
-      <h1>EM CONSTRUÇÃO</h1>
-      <Title job="dev">
-      </Title>
+    <main className='CurrDev-main' >
+      <h1 >EM CONSTRUÇÃO</h1>
+      <Title job="dev" />
       <fieldset>
         <legend>Dados pessoais</legend>
         <section>
-          <h2>JOÃO RALPH GONÇALVES CASTALDI</h2>
-          <p><span style={ { fontWeight: 'bold' } }>Endereço: </span>SHIS QL 24, conjunto 06, casa 15, bairro Lago Sul, CEP 71.665-065, Brasília-DF</p>
-          <p><span style={ { fontWeight: 'bold' } }>Telefones: <Emoji unicode='U+1F4F2' label='mobile phone'></Emoji> </span>(61) 9 8242-3750 ; <Emoji unicode='U+260E' label='phone'></Emoji> (61) 3367-1247</p>
-          <p><span style={ { fontWeight: 'bold' } }>Endereço eletrônico: </span>  joao.ralph1@gmail.com </p>
-          <section style={ { display: 'flex', justifyContent: 'space-around', margin: 'auto', width: '20vw' } }>
-            <SocialIcons url='https://github.com/JRGCast' />
-            <SocialIcons url='https://www.linkedin.com/in/joao-ralph-castaldi/' />
-            <SocialIcons url='https://www.facebook.com/jcastaldiadv' />
-            <SocialIcons url='https://www.instagram.com/jcastaldiadv/' />
-          </section>
+          <PersonalData />
+          <SocialIcons urls={ devUrls } />
         </section>
       </fieldset>
       <fieldset>
         <legend>Dados profissionais</legend>
-        <section
-          style={ {
-            display: 'flex',
-            justifyContent: 'space-around'
-          } }>
-          <aside className='aside'>
-            <h4 > Curso programação: </h4>
-            <ul style={ { display: 'flex', flexFlow: 'column nowrap' } }>
+        <section className='CurrDev-data-container'>
+          <aside className='CurrDev-aside-container'>
+            <h4 className='CurrDev-aside-title' > Curso programação: </h4>
+            <ul style={ {
+              display: 'flex',
+              flexFlow: 'column nowrap'
+            } }>
             </ul>
           </aside>
-          <aside className='aside'>
+          <aside className='CurrDev-aside'>
             <h4>Tecnologias aprendidas: </h4>
             <table>
-              <tr>
-                <th>Fundamentos</th>
-                <th>Front-End</th>
-                <th>Back-End</th>
-              </tr>
-              <tr>
-                <td>
-                  Ubuntu
-                </td>
-              </tr>
+              <thead>
+                <tr>
+                  <th>Fundamentos</th>
+                  <th>Front-End</th>
+                  <th>Back-End</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className='CurrDev-td-logos-container'>{ fundImgs }</td>
+                  <td className='CurrDev-td-logos-container'>{ frontEndLogos }</td>
+                  <td className='CurrDev-td-logos-container'>{ backEndLogos }</td>
+                </tr>
+              </tbody>
             </table>
-          </aside>
-          <aside style={ { border: '5px solid black', padding: '0 5px 0 0', width: 'fit-content' } }>
-            <h4>Idiomas: </h4>
-            <ul style={ { display: 'flex', flexFlow: 'column nowrap' } }>
-            </ul>
           </aside>
         </section>
       </fieldset>

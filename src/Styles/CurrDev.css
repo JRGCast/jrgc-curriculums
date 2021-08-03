@@ -1,0 +1,21 @@
+.CurrDev-aside-container {
+  border: 1px solid black;
+  width: fit-content;
+}
+
+.CurrDev-aside-title {
+  font-weight: 700;
+}
+
+.CurrDev-data-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.CurrDev-main {
+  text-align: center;
+}
+
+.CurrDev-td-logos-container {
+  display: flex;
+}
