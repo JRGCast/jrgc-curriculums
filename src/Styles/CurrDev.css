@@ -7,9 +7,43 @@
   font-weight: 700;
 }
 
+.CurrDev-aside ul {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .CurrDev-data-container {
   display: flex;
   justify-content: space-around;
+}
+
+.CurrDev-grid-fundamentals {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  grid-area: 'fundamentals';
+}
+
+.CurrDev-grid-front-end {
+  grid-area: 'front';
+}
+
+.CurrDev-grid-back-end {
+  grid-area: 'back';
+}
+
+.CurrDev-grid-container {
+  background-color: #000;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-areas: 'fundamentals fundamentals fundamentals fundamentals fundamentals'
+    'front front front front front'
+    'back back back back back';
+  padding: 1em;
+}
+
+.CurrDev-grid-container h5 {
+  color: white;
 }
 
 .CurrDev-main {

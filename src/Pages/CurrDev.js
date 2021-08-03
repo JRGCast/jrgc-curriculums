@@ -37,30 +37,22 @@ const CurrDev = () => {
         <section className='CurrDev-data-container'>
           <aside className='CurrDev-aside-container'>
             <h4 className='CurrDev-aside-title' > Curso programação: </h4>
-            <ul style={ {
-              display: 'flex',
-              flexFlow: 'column nowrap'
-            } }>
-            </ul>
+            <ul></ul>
           </aside>
           <aside className='CurrDev-aside'>
             <h4>Tecnologias aprendidas: </h4>
-            <table>
-              <thead>
-                <tr>
-                  <th>Fundamentos</th>
-                  <th>Front-End</th>
-                  <th>Back-End</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className='CurrDev-td-logos-container'>{ fundImgs }</td>
-                  <td className='CurrDev-td-logos-container'>{ frontEndLogos }</td>
-                  <td className='CurrDev-td-logos-container'>{ backEndLogos }</td>
-                </tr>
-              </tbody>
-            </table>
+            <section className='CurrDev-grid-container'>
+              <h5 style={ { color: 'white' } }>Fundamentos</h5>
+              <div className='CurrDev-grid-fundamentals' >
+                { fundImgs }
+              </div>
+            </section>
+            <section>
+              <h5>Front-End</h5>
+            </section>
+            <section>
+              <h5>Back-End</h5>
+            </section>
           </aside>
         </section>
       </fieldset>
