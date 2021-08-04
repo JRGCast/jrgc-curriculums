@@ -21,6 +21,8 @@
   background-color: white;
   border: 1px solid black;
   color: black;
+  display: flex;
+  flex-flow: row wrap;
   grid-area: 'fundamentals';
 }
 
