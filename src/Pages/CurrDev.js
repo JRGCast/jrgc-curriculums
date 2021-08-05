@@ -47,15 +47,17 @@ return (
           <h4>Tecnologias aprendidas: </h4>
           <section className='CurrDev-grid-container'>
             <h5 style={ { color: 'white' } }>Fundamentos</h5>
-            <div className='CurrDev-grid-fundamentals' >
+            <div className='CurrDev-grid-fundamentals CurrDev-content-grid-container' >
               { fundImgs }
             </div>
           </section>
           <section className='CurrDev-grid-container'>
             <h5>Front-End</h5>
+            <div className='CurrDev-grid-front-end CurrDev-content-grid-container'>{frontEndLogos}</div>
           </section>
           <section className='CurrDev-grid-container'>
             <h5>Back-End</h5>
+            <div className='CurrDev-grid-back-end CurrDev-content-grid-container'>{backEndLogos}</div>
           </section>
         </aside>
       </section>

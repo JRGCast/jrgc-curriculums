@@ -17,35 +17,50 @@
   justify-content: space-around;
 }
 
-.CurrDev-grid-fundamentals {
+.CurrDev-content-grid-container {
   background-color: white;
   border: 1px solid black;
   color: black;
   display: flex;
   flex-flow: row wrap;
+  gap: 0.5em;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+.CurrDev-grid-fundamentals {
   grid-area: 'fundamentals';
+
 }
 
 .CurrDev-grid-front-end {
   grid-area: 'front';
+
 }
 
 .CurrDev-grid-back-end {
   grid-area: 'back';
+
 }
 
 .CurrDev-grid-container {
   background-color: rgba(0, 0, 0, 0.87);
+  border: 0.3em groove rgba(238, 238, 238, 0.753);
   display: grid;
   grid-gap: 2px;
   grid-template-areas: 'fundamentals fundamentals fundamentals fundamentals fundamentals'
     'front front front front front'
     'back back back back back';
+  margin: 0.3em;
   padding: 1em;
 }
 
 .CurrDev-grid-container h5 {
   color: white;
+  display: flex;
+  justify-content: center;
+  margin: auto 5px;
+  width: 7em;
 }
 
 .CurrDev-main {
