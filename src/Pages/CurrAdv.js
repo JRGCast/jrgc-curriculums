@@ -15,7 +15,7 @@ const CurrAdv = () => {
     textAlign: 'left'
   } }>{ elem };</li>);
   return (
-    <main>
+    <main className='CurrAdv'>
       <h1>EM CONSTRUÇÃO</h1>
       <Title job="adv" />
       <fieldset>

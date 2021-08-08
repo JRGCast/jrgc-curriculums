@@ -1,15 +1,14 @@
 .CurrDev-aside-container {
   border: 1px solid black;
+  height: fit-content;
   width: fit-content;
 }
 
 .CurrDev-aside-title {
+  border-bottom: 1px solid black;
   font-weight: 700;
-}
-
-.CurrDev-aside ul {
-  display: flex;
-  flex-flow: column nowrap;
+  margin: 0.5em;
+  padding: 0.5em;
 }
 
 .CurrDev-data-container {
@@ -26,6 +25,28 @@
   gap: 0.5em;
   justify-content: space-between;
   padding: 0.5em;
+}
+
+.CurrDev-courses-container {
+  border: 1px solid black;
+  display: flex;
+}
+
+.CurrDev-courses-ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  text-align: center;
+  width: fit-content;
+}
+
+.CurrDev-courses-ul li {
+  list-style-type: none;
+  padding: 0.5em;
+}
+
+.CurrDev-courses-ul li:before {
+  content: '\27ae';
 }
 
 .CurrDev-grid-fundamentals {
