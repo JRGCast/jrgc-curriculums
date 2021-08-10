@@ -1,7 +1,12 @@
 .CurrDev-aside-container {
   border: 1px solid black;
+  display: grid;
   height: fit-content;
   width: fit-content;
+}
+
+.CurrDev-tec-aside-container {
+  display: flex;
 }
 
 .CurrDev-aside-title {
@@ -34,6 +39,7 @@
 
 .CurrDev-courses-ul {
   display: flex;
+  flex-flow: column wrap;
   justify-content: space-around;
   padding: 0;
   text-align: center;
@@ -54,6 +60,11 @@
 
 }
 
+.CurrDev-grid-fundamentals img {
+  border: 5px solid orange;
+}
+
+
 .CurrDev-grid-front-end {
   grid-area: 'front';
 
@@ -69,9 +80,7 @@
   border: 0.3em groove rgba(238, 238, 238, 0.753);
   display: grid;
   grid-gap: 2px;
-  grid-template-areas: 'fundamentals fundamentals fundamentals fundamentals fundamentals'
-    'front front front front front'
-    'back back back back back';
+  grid-template-columns: repeat(3, 1fr);
   margin: 0.3em;
   padding: 1em;
 }

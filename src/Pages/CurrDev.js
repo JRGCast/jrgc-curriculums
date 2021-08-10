@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SocialIcons } from '../Components';
 import PersonalData from '../Components/PersonalData';
 import Title from '../Components/Title';
@@ -7,8 +7,11 @@ import '../Styles/CurrDev.css';
 
 
 const CurrDev = () => {
-  const courses = ['Trybe Full-stack Developer (cursando)'];
-  const coursesMapping = courses.map((course, index) => <li key={ `${index}-${course}` }>{ course }</li>);
+  const [showDetails1, setShowDetails1] = useState(false);
+  const [showDetails2, setShowDetails2] = useState(false);
+  const [showDetails3, setShowDetails3] = useState(false);
+  const courses = ['DevSamurai - Meu primeiro aplicativo', 'Trybe Full-stack Developer (cursando)'];
+  const coursesMapping = courses.map((course, index) => <li key={ `${index}-${course}` }>{ course };</li>);
   const logoStyles = {
     objectFit: 'scale-down',
     width: '5em'
@@ -28,31 +31,39 @@ const CurrDev = () => {
     'https://www.facebook.com/jcastaldiadv',
     'https://www.instagram.com/jcastaldiadv/'];
   return (
-    <main className='CurrDev-main' >
-      <h1 >EM CONSTRUÇÃO</h1>
-      <Title job="dev" />
+    <main >
+      <header>
+        <h1 >EM CONSTRUÇÃO</h1>
+        <Title job="dev" />
+        <fieldset>
+          <legend>Dados pessoais</legend>
+          <section>
+            <PersonalData />
+            <SocialIcons urls={ devUrls } />
+          </section>
+        </fieldset>
+      </header>
       <fieldset>
-        <legend>Dados pessoais</legend>
-        <section>
-          <PersonalData />
-          <SocialIcons urls={ devUrls } />
-        </section>
-      </fieldset>
-      <fieldset>
+        <ul>Dicas aula 09/08/21:
+          <li>Retratar como está sendo feita transição de carreira</li>
+          <li>Criar página linkedin em inglês também</li>
+        </ul>
         <legend>Dados profissionais</legend>
         <h3>Objetivo: Desenvolvedor Jr.</h3>
-        <section className='CurrDev-data-container'>
-          <aside className='CurrDev-aside-container'>
-            <h4 className='CurrDev-aside-title' > Curso programação: </h4>
+        <main className='CurrDev-data-container'>
+          <section className='CurrDev-aside-container'>
+            <h4 className='CurrDev-aside-title' > Aprendizado: </h4>
             <ul className='CurrDev-courses-ul'>{ coursesMapping }</ul>
-          </aside>
-          <aside className='CurrDev-aside-container'>
+          </section>
+          <section className='CurrDev-aside-container'>
             <h4 className='CurrDev-aside-title'>Tecnologias aprendidas: </h4>
             <section className='CurrDev-grid-container'>
-              <h5 style={ { color: 'white' } }>Fundamentos</h5>
-              <div className='CurrDev-grid-fundamentals CurrDev-content-grid-container' >
-                { fundImgs }
+              <div className='CurrDev-tec-title-container'>
+                <h5 style={ { color: 'white' } }>Fundamentos</h5>
               </div>
+              <button type='button' onClick={ () => setShowDetails1(!showDetails1) }>{ !showDetails1 ? 'Ver detalhes' : 'Esconder' }</button>
+              { showDetails1 ? <div className='CurrDev-grid-fundamentals CurrDev-content-grid-container' > { fundImgs }
+              </div> : '' }
             </section>
             <section className='CurrDev-grid-container'>
               <h5>Front-End</h5>
@@ -62,8 +73,8 @@ const CurrDev = () => {
               <h5>Back-End</h5>
               <div className='CurrDev-grid-back-end CurrDev-content-grid-container'>{ backEndLogos }</div>
             </section>
-          </aside>
-        </section>
+          </section>
+        </main>
       </fieldset>
     </main>
   );
